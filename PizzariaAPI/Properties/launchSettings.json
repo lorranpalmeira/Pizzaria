@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/pizzarias",
+      "launchUrl": "api/pizzaria",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -19,7 +19,7 @@
     "PizzariaAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/pizzarias",
+      "launchUrl": "api/pizzaria",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

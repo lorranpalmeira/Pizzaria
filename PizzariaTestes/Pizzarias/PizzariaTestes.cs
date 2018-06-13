@@ -33,6 +33,24 @@ namespace PizzariaTestes.Pizzarias
         }
 
         [Fact]
+        public async Task TestGetPizzaria()
+        {
+            // Arrange
+            var controller = new PizzariaController();
+
+            // Act
+            IActionResult actionResult = await controller.GetPizzarias();
+
+            // Assert
+            Assert.NotNull(actionResult);
+            //CreatedResult result = actionResult as CreatedResult;
+            var result = actionResult as OkObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+        }
+
+        [Fact]
         public async Task TestGet200()
         {
             // Arrange
