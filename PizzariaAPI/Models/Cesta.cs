@@ -14,7 +14,9 @@ namespace PizzariaAPI.Models
 
         public int Id_Cliente { get; set; }
 
-        public DateTime DataPedido { get; set; }
+        public DateTime Data_Pedido { get; set; }
+
+        public decimal Valor_Total { get; set; }
 
         public IList<ItensCesta> ItensCesta { get; set; }
     }
