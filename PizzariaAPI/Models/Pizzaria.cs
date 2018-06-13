@@ -12,7 +12,7 @@ namespace PizzariaAPI.Models
 
         public string Nome { get; set; }
 
-        public string NomeFantasia { get; set; }
+        public string Nome_Fantasia { get; set; }
 
         public string Cnpj { get; set; }
 
