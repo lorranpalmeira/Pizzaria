@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PizzariaAPI.Models
 {
-    public class Pizzaria
+    public class Pizzaria : Endereco
     {
 
         public int Id_Pizzaria { get; set; }

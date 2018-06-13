@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace PizzariaAPI.Models
+﻿namespace PizzariaAPI.Models
 {
-    public class Cliente
+    public class Cliente : Endereco
     {
 
         public int Id_Cliente { get; set; }
