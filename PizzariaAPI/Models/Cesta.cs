@@ -12,7 +12,10 @@ namespace PizzariaAPI.Models
 
         public int Id_Pizzaria { get; set; }
 
+        public int Id_Cliente { get; set; }
 
-        public IList<Produto> Produtos { get; set; }
+        public DateTime DataPedido { get; set; }
+
+        public IList<ItensCesta> ItensCesta { get; set; }
     }
 }
