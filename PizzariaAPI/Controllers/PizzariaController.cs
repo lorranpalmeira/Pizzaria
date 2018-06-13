@@ -29,7 +29,7 @@ namespace PizzariaAPI.Controllers
         }
 
 
-        [Route("get")]
+        [Route("GetPizzarias")]
         [HttpGet]
         public async Task<IActionResult> GetPizzarias()
         {
