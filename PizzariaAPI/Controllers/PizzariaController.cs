@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace PizzariaAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class PizzariasController : Controller
+    public class PizzariaController : Controller
     {
         [Route("get")]
         [HttpGet]

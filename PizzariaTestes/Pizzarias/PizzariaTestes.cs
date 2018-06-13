@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PizzariaAPI.Controllers;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -15,7 +13,7 @@ namespace PizzariaTestes.Pizzarias
         public async Task TestGet()
         {
             // Arrange
-            var controller = new PizzariasController();
+            var controller = new PizzariaController();
 
             // Act
             IActionResult actionResult = await controller.Get();
@@ -35,10 +33,10 @@ namespace PizzariaTestes.Pizzarias
         }
 
         [Fact]
-        public async Task TestPost()
+        public async Task TestGet200()
         {
             // Arrange
-            var controller = new PizzariasController();
+            var controller = new PizzariaController();
 
             // Act
             IActionResult actionResult = await controller.Get();
