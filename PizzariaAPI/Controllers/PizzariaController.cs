@@ -33,8 +33,6 @@ namespace PizzariaAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPizzarias()
         {
-            //List<string> pizzarias = new List<string>() { "Pizzaria1", "Pizzaria2" };
-
             var pizzarias = listaPizzaria.ToList();
             return Ok(pizzarias);
         }
