@@ -13,11 +13,11 @@ namespace PizzariaAPI.Controllers
 
         public static List<Pizzaria> listaPizzaria = new List<Pizzaria>
         {
-            new Pizzaria(){ Id_Pizzaria=01, Nome="1 Amigo" },
-            new Pizzaria(){ Id_Pizzaria=02, Nome="2 Amigos" },
-            new Pizzaria(){ Id_Pizzaria=03, Nome="3 Amigos" },
-            new Pizzaria(){ Id_Pizzaria=04, Nome="4 Amigos" },
-            new Pizzaria(){ Id_Pizzaria=02, Nome="5 Amigos" }
+            new Pizzaria(){ IdPizzaria=01, Nome="1 Amigo" },
+            new Pizzaria(){ IdPizzaria=02, Nome="2 Amigos" },
+            new Pizzaria(){ IdPizzaria=03, Nome="3 Amigos" },
+            new Pizzaria(){ IdPizzaria=04, Nome="4 Amigos" },
+            new Pizzaria(){ IdPizzaria=02, Nome="5 Amigos" }
         };
 
         [Route("get")]
