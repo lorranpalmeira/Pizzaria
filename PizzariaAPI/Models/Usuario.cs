@@ -13,5 +13,7 @@ namespace PizzariaAPI.Models
 
         [Required]
         public string Senha { get; set; }
+
+        public string Role { get; set; }
     }
 }
