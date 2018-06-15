@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PizzariaAPI.Controllers;
+using PizzariaAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +18,7 @@ namespace PizzariaTestes.Login
 
             var login = new LoginController();
 
-            IActionResult actionResult = await login.Login("lorran","123");
+            IActionResult actionResult = await login.Login(new Usuario { Login = "lorran", Senha = "123" });
 
             Assert.NotNull(actionResult);
 
@@ -32,7 +33,7 @@ namespace PizzariaTestes.Login
         public async Task LoginTesteErro() {
             var login = new LoginController();
 
-            IActionResult actionResult = await login.Login("lorran","12345");
+            IActionResult actionResult = await login.Login(new Usuario { Login="lorran",Senha="12345"});
 
             Assert.NotNull(actionResult);
 

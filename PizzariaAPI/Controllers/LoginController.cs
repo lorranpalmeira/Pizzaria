@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PizzariaAPI.Models;
 
 namespace PizzariaAPI.Controllers
 {
@@ -11,10 +12,10 @@ namespace PizzariaAPI.Controllers
     {
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login([FromBody] string login, string senha)
+        public async Task<IActionResult> Login([FromBody] Usuario usuario)
         {
 
-            if (login=="lorran" && senha=="123")
+            if (usuario.Login=="lorran" && usuario.Senha=="123")
             {
 
                 return Ok("Autenticado");
