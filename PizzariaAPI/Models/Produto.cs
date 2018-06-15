@@ -7,11 +7,11 @@ namespace PizzariaAPI.Models
 {
     public class Produto
     {
-        public int Id_Pizzaria  { get; set; }
+        public int IdPizzaria  { get; set; }
 
-        public int Id_Produto { get; set; }
+        public int IdProduto { get; set; }
 
-        public string Nome_Pizza { get; set; }
+        public string NomePizza { get; set; }
 
         public string Descricao { get; set; }
 

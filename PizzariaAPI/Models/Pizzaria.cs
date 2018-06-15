@@ -8,11 +8,11 @@ namespace PizzariaAPI.Models
     public class Pizzaria : Endereco
     {
 
-        public int Id_Pizzaria { get; set; }
+        public int IdPizzaria { get; set; }
 
         public string Nome { get; set; }
 
-        public string Nome_Fantasia { get; set; }
+        public string NomeFantasia { get; set; }
 
         public string Cnpj { get; set; }
 

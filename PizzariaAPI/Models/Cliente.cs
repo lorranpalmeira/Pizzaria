@@ -3,7 +3,7 @@
     public class Cliente : Endereco
     {
 
-        public int Id_Cliente { get; set; }
+        public int IdCliente { get; set; }
 
         public string Nome { get; set; }
 

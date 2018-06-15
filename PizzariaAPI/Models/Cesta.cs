@@ -8,15 +8,15 @@ namespace PizzariaAPI.Models
     public class Cesta
     {
 
-        public int Id_Cesta { get; set; }
+        public int IdCesta { get; set; }
 
-        public int Id_Pizzaria { get; set; }
+        public int IdPizzaria { get; set; }
 
-        public int Id_Cliente { get; set; }
+        public int IdCliente { get; set; }
 
-        public DateTime Data_Pedido { get; set; }
+        public DateTime DataPedido { get; set; }
 
-        public decimal Valor_Total { get; set; }
+        public decimal ValorTotal { get; set; }
 
         public IList<ItensCesta> ItensCesta { get; set; }
     }

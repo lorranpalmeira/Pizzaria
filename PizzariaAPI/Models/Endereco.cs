@@ -7,7 +7,7 @@ namespace PizzariaAPI.Models
 {
     public class Endereco
     {
-        public int Id_Endereco { get; set; }
+        public int IdEndereco { get; set; }
 
         // Pizzaria ou Cliente
         public string Tipo { get; set; }
