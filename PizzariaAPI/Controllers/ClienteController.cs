@@ -19,9 +19,19 @@ namespace PizzariaAPI.Controllers
         [Route("CadastroCliente")]
         public IActionResult CadastroCliente([FromBody] Cliente cliente) {
 
+            if (ModelState.IsValid) {
 
 
-            return Ok();
+
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+           
         }
     }
 }
