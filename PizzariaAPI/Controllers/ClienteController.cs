@@ -7,6 +7,7 @@ using PizzariaAPI.Models;
 
 namespace PizzariaAPI.Controllers
 {
+    [Route("api/[controller]")]
     public class ClienteController : Controller
     {
         public IActionResult Index()
@@ -17,17 +18,15 @@ namespace PizzariaAPI.Controllers
 
         [HttpPost]
         [Route("CadastroCliente")]
-        public IActionResult CadastroCliente([FromBody] Cliente cliente) {
+        public async Task<IActionResult> CadastroCliente( [FromBody] Cliente cliente) {
 
             if (ModelState.IsValid) {
-
-
-
-                return Ok();
+                
+                return Ok("Ok");
             }
             else
             {
-                return NotFound();
+                return BadRequest(cliente);
             }
 
 
