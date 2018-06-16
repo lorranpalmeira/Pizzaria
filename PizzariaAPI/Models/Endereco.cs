@@ -20,6 +20,8 @@ namespace PizzariaAPI.Models
 
         public string Complemento { get; set; }
 
+        public string PontoReferencia { get; set; }
+
         public string Cidade { get; set; }
 
         public string Estado { get; set; }
