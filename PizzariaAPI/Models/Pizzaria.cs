@@ -18,6 +18,6 @@ namespace PizzariaAPI.Models
 
         public bool Ativo { get; set; }
 
-        public bool Bloqueado { get; set; }
+        public DateTime UltimoLogin { get; set; }
     }
 }

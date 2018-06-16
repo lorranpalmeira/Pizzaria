@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PizzariaAPI.Models
 {
@@ -23,6 +24,11 @@ namespace PizzariaAPI.Models
         [Required]
         public string Email { get; set; }
 
-        
+
+        public DateTime UltimaPedido { get; set; }
+
+        public DateTime UltimoLogin { get; set; }
+
+
     }
 }
