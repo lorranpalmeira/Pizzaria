@@ -14,6 +14,8 @@ namespace PizzariaAPI.Models
 
         public int IdCliente { get; set; }
 
+        public Status Status { get; set; }
+
         public DateTime DataPedido { get; set; }
 
         public decimal ValorTotal { get; set; }
