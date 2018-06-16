@@ -17,5 +17,7 @@ namespace PizzariaAPI.Models
         public string Cnpj { get; set; }
 
         public bool Ativo { get; set; }
+
+        public bool Bloqueado { get; set; }
     }
 }
