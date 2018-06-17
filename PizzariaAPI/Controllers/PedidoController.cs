@@ -10,6 +10,15 @@ namespace PizzariaAPI.Controllers
     [Route("api/[controller]")]
     public class PedidoController : Controller
     {
-        
+
+        [HttpGet]
+        [Route("Listaprodutos")]
+        public async Task<IActionResult> Listaprodutos()
+        {
+
+
+            return Ok("Test");
+        }
+
     }
 }
