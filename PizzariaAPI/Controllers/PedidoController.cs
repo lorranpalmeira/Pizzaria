@@ -24,7 +24,7 @@ namespace PizzariaAPI.Controllers
 
         [HttpPost]
         [Route("Listaprodutos")]
-        public async Task<IActionResult> Listaprodutos(Cliente cliente)
+        public async Task<IActionResult> Listaprodutos([FromBody]Cliente cliente)
         {
             var produtos =_produtos.Where(x => x.IdPizzaria == cliente.IdPizzaria);
 
@@ -36,8 +36,7 @@ namespace PizzariaAPI.Controllers
         public async Task<IActionResult> CriaPedido([FromBody] Pedido pedido,
             ItensPedido itensPedido)
         {
-
-
+            
             return Ok("Ok");
         }
 

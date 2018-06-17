@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PizzariaAPI.Controllers;
 using PizzariaAPI.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -12,15 +9,22 @@ namespace PizzariaTestes.Pedido
     public class PedidoTestes
     {
 
+        private PedidoController _pedido;
+        
+        
+
+        public PedidoTestes()
+        {
+            _pedido = new PedidoController();
+        }
+
 
         [Fact]
         public async Task ListaProdutosTeste() {
 
-            var pedido = new PedidoController();
-
             Cliente cliente = new Cliente { IdPizzaria=001 };
 
-            IActionResult actionResult = await pedido.Listaprodutos(cliente);
+            IActionResult actionResult = await _pedido.Listaprodutos(cliente);
 
             Assert.NotNull(actionResult);
 
@@ -29,7 +33,23 @@ namespace PizzariaTestes.Pedido
             Assert.NotNull(result);
             Assert.Equal(200, result.StatusCode);
 
+        }
+
+        [Fact]
+        public async Task CriaPedidoTeste()
+        {
+            PizzariaAPI.Models.Pedido ped = new PizzariaAPI.Models.Pedido();
+            ItensPedido itens = new ItensPedido { IdPizzaria = 001 };
             
+
+            IActionResult actionResult = await _pedido.CriaPedido(ped,itens);
+
+            Assert.NotNull(actionResult);
+
+            var result = actionResult as OkObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
 
         }
     }
