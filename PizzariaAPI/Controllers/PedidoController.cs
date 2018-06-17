@@ -11,7 +11,7 @@ namespace PizzariaAPI.Controllers
     [Route("api/[controller]")]
     public class PedidoController : Controller
     {
-
+        #region MockDB
         public static List<Produto> _produtos = new List<Produto> {
 
             new Produto{IdProduto=01, NomeProduto="Pizza Calabresa", IdPizzaria=001, Valor=45.98},
@@ -21,6 +21,19 @@ namespace PizzariaAPI.Controllers
             new Produto{IdProduto=05, NomeProduto="Pizza Mista", IdPizzaria=001, Valor=21.56},
             new Produto{IdProduto=06, NomeProduto="Pizza da Casa", IdPizzaria=001, Valor=30}
         };
+
+        public static List<Pedido> _pedidos = new List<Pedido> {
+
+            new Pedido{ IdPizzaria=001, Status=Status.ABERTO },
+            new Pedido{ IdPizzaria=001, Status=Status.ABERTO},
+            new Pedido{ IdPizzaria=001,  Status=Status.ABERTO},
+            new Pedido{ IdPizzaria=002, Status=Status.ABERTO},
+            new Pedido{IdPizzaria=001,  Status=Status.ENTREGUE},
+            new Pedido{ IdPizzaria=001,  Status=Status.ABERTO}
+        };
+
+        #endregion
+
 
         [HttpPost]
         [Route("Listaprodutos")]
@@ -38,6 +51,16 @@ namespace PizzariaAPI.Controllers
         {
             
             return Ok("Ok");
+        }
+
+        [HttpPost]
+        [Route("PedidosEmAberto")]
+        public async Task<IActionResult> PedidosEmAberto(Pizzaria pizzaria)
+        {
+            var pedidosEmAberto =_pedidos.Where(x => x.Status == Status.ABERTO 
+            && x.IdPizzaria == pizzaria.IdPizzaria);
+
+            return Ok(pedidosEmAberto);
         }
 
     }

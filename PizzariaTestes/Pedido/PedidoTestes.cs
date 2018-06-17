@@ -52,5 +52,24 @@ namespace PizzariaTestes.Pedido
             Assert.Equal(200, result.StatusCode);
 
         }
+
+        [Fact]
+        public async Task PedidoEmAbertoTeste()
+        {
+            
+            Pizzaria pizzaria = new Pizzaria { IdPizzaria = 001 };
+
+
+            IActionResult actionResult = await _pedido.PedidosEmAberto(pizzaria);
+
+            Assert.NotNull(actionResult);
+
+            var result = actionResult as OkObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+
+        }
+
     }
 }
