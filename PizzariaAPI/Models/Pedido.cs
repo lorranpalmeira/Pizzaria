@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace PizzariaAPI.Models
 {
-    public class Cesta
+    public class Pedido
     {
 
-        public int IdCesta { get; set; }
+        public int IdPedido { get; set; }
 
         public int IdPizzaria { get; set; }
 
@@ -20,6 +20,6 @@ namespace PizzariaAPI.Models
 
         public decimal ValorTotal { get; set; }
 
-        public IList<ItensCesta> ItensCesta { get; set; }
+        public IList<ItensPedido> ItensPedido { get; set; }
     }
 }

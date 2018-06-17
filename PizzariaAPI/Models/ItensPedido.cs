@@ -1,8 +1,8 @@
 ﻿namespace PizzariaAPI.Models
 {
-    public class ItensCesta
+    public class ItensPedido
     {
-        public int IdCesta { get; set; }
+        public int IdPedido { get; set; }
 
         public int IdPizzaria { get; set; }
 
