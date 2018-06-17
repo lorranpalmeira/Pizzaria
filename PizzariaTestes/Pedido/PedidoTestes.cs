@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PizzariaAPI.Controllers;
+using PizzariaAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +18,9 @@ namespace PizzariaTestes.Pedido
 
             var pedido = new PedidoController();
 
-            IActionResult actionResult = await pedido.Listaprodutos();
+            Cliente cliente = new Cliente { IdPizzaria=001 };
+
+            IActionResult actionResult = await pedido.Listaprodutos(cliente);
 
             Assert.NotNull(actionResult);
 

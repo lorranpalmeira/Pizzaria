@@ -11,7 +11,7 @@ namespace PizzariaAPI.Models
 
         public int IdProduto { get; set; }
 
-        public string NomePizza { get; set; }
+        public string NomeProduto { get; set; }
 
         public string Descricao { get; set; }
 
