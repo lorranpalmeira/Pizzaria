@@ -27,7 +27,7 @@ namespace PizzariaAPI.Models
 
         public DateTime UltimaPedido { get; set; }
 
-        public DateTime UltimoLogin { get; set; }
+        
 
 
     }

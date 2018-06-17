@@ -17,5 +17,7 @@ namespace PizzariaAPI.Models
         public string Role { get; set; }
 
         public int IdPizzaria { get; set; }
+
+        public DateTime UltimoLogin { get; set; }
     }
 }

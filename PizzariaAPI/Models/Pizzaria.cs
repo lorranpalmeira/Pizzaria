@@ -22,6 +22,6 @@ namespace PizzariaAPI.Models
 
         public bool Ativo { get; set; }
 
-        public DateTime UltimoLogin { get; set; }
+        
     }
 }
