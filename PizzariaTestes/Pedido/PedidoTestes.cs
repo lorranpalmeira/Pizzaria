@@ -71,5 +71,23 @@ namespace PizzariaTestes.Pedido
 
         }
 
+        [Fact]
+        public async Task AcompanhamentoPedidoTeste()
+        {
+
+            Cliente cliente = new Cliente { IdCliente = 001 };
+
+
+            IActionResult actionResult = await _pedido.AcompanhamentoPedido(cliente);
+
+            Assert.NotNull(actionResult);
+
+            var result = actionResult as OkObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+
+        }
+
     }
 }

@@ -53,6 +53,7 @@ namespace PizzariaAPI.Controllers
             return Ok("Ok");
         }
 
+        //Para Pizzaria
         [HttpPost]
         [Route("PedidosEmAberto")]
         public async Task<IActionResult> PedidosEmAberto(Pizzaria pizzaria)
@@ -61,6 +62,17 @@ namespace PizzariaAPI.Controllers
             && x.IdPizzaria == pizzaria.IdPizzaria);
 
             return Ok(pedidosEmAberto);
+        }
+
+
+        //Para Cliente
+        [HttpPost]
+        [Route("PedidosEmAberto")]
+        public async Task<IActionResult> AcompanhamentoPedido(Cliente cliente)
+        {
+            var acompamentoPedido = _pedidos.Where(x => x.IdCliente == cliente.IdCliente);
+
+            return Ok(acompamentoPedido);
         }
 
     }
