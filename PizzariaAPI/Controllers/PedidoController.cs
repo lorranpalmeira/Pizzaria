@@ -68,15 +68,15 @@ namespace PizzariaAPI.Controllers
         [Route("PedidosEmAndamento")]
         public async Task<IActionResult> PedidoEmAndamendo(Pizzaria pizzaria)
         {
-            var pedidosEmAberto = _pedidos.Where(x => x.Status == Status.EM_ANDAMENTO
+            var pedidosEmAndamento = _pedidos.Where(x => x.Status == Status.EM_ANDAMENTO
              && x.IdPizzaria == pizzaria.IdPizzaria);
 
-            return Ok(pedidosEmAberto);
+            return Ok(pedidosEmAndamento);
         }
 
         [HttpPost]
-        [Route("PedidosFechados")]
-        public async Task<IActionResult> PedidosFechados(Pizzaria pizzaria)
+        [Route("PedidosFechadosHoje")]
+        public async Task<IActionResult> PedidosFechadosHoje(Pizzaria pizzaria)
         {
             var pedidosFechados = _pedidos.Where(x => x.Status == Status.ENTREGUE
             && x.DataPedido == DateTime.Now.ToLocalTime() 
