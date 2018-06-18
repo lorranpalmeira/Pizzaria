@@ -88,7 +88,7 @@ namespace PizzariaAPI.Controllers
 
         //Para Cliente
         [HttpPost]
-        [Route("PedidosEmAberto")]
+        [Route("AcompanhamentoPedido")]
         public async Task<IActionResult> AcompanhamentoPedido(Cliente cliente)
         {
             var acompamentoPedido = _pedidos.Where(x => x.IdCliente == cliente.IdCliente);
