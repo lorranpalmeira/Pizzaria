@@ -72,6 +72,44 @@ namespace PizzariaTestes.Pedido
         }
 
         [Fact]
+        public async Task PedidoEmAndamentoTeste()
+        {
+
+            Pizzaria pizzaria = new Pizzaria { IdPizzaria = 001 };
+
+
+            IActionResult actionResult = await _pedido.PedidoEmAndamendo(pizzaria);
+
+            Assert.NotNull(actionResult);
+
+            var result = actionResult as OkObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+
+        }
+
+        [Fact]
+        public async Task PedidoFechadosHojeTeste()
+        {
+
+            Pizzaria pizzaria = new Pizzaria { IdPizzaria = 001 };
+
+
+            IActionResult actionResult = await _pedido.PedidosFechadosHoje(pizzaria);
+
+            Assert.NotNull(actionResult);
+
+            var result = actionResult as OkObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+
+        }
+
+
+
+        [Fact]
         public async Task AcompanhamentoPedidoTeste()
         {
 
