@@ -26,10 +26,10 @@ namespace PizzariaAPI.Controllers
 
             new Pedido{ IdPizzaria=001, Status=Status.ABERTO },
             new Pedido{ IdPizzaria=001, Status=Status.ABERTO},
-            new Pedido{ IdPizzaria=001,  Status=Status.ABERTO},
+            new Pedido{ IdPizzaria=001, Status=Status.ABERTO},
             new Pedido{ IdPizzaria=002, Status=Status.ABERTO},
-            new Pedido{IdPizzaria=001,  Status=Status.ENTREGUE},
-            new Pedido{ IdPizzaria=001,  Status=Status.ABERTO}
+            new Pedido{ IdPizzaria=001, Status=Status.ENTREGUE},
+            new Pedido{ IdPizzaria=001, Status=Status.ABERTO}
         };
 
         #endregion
