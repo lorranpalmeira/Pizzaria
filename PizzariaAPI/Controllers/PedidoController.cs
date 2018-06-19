@@ -105,8 +105,11 @@ namespace PizzariaAPI.Controllers
             var alterarPedido = _pedidos.Where(x => x.IdPedido == pedido.IdPedido);
 
             // Função para alterar.....
+           var index = _pedidos.FindIndex(x => x.IdPedido == pedido.IdPedido);
 
-            return Ok(alterarPedido);
+            var pedidoAlterado = _pedidos[index] = pedido;
+
+            return Ok(pedidoAlterado);
         }
 
     }
