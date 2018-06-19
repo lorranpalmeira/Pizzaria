@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzariaAPI", "PizzariaAPI\PizzariaAPI.csproj", "{406C3D8A-4794-40B2-9F79-87ED0484BE6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaAPI", "PizzariaAPI\PizzariaAPI.csproj", "{406C3D8A-4794-40B2-9F79-87ED0484BE6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzariaTestes", "PizzariaTestes\PizzariaTestes.csproj", "{42101A50-DFC6-42B8-A4E8-C04027467F8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaTestes", "PizzariaTestes\PizzariaTestes.csproj", "{42101A50-DFC6-42B8-A4E8-C04027467F8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

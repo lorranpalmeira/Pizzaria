@@ -96,5 +96,16 @@ namespace PizzariaAPI.Controllers
             return Ok(acompamentoPedido);
         }
 
+
+        [HttpPut]
+        [Route("AlterarPedido")]
+        public async Task<IActionResult> AlterarPedido(Pedido pedido, 
+            ItensPedido itensPedido)
+        {
+            var alterarPedido = _pedidos.Where(x => x.IdPedido == pedido.IdPedido);
+
+            return Ok(alterarPedido);
+        }
+
     }
 }
