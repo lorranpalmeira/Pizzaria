@@ -28,7 +28,7 @@ namespace PizzariaAPI.Controllers
             return Ok(lista);
         }
 
-
+        // "http://localhost:51830/api/Pizzaria/GetPizzarias"
         [Route("GetPizzarias")]
         [HttpGet]
         public async Task<IActionResult> GetPizzarias()
