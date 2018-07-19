@@ -24,22 +24,23 @@ namespace PizzariaAPI.Controllers
 
         public static List<Pedido> _pedidos = new List<Pedido> {
 
-            new Pedido{ IdPizzaria=001, Status=Status.ABERTO },
-            new Pedido{ IdPizzaria=001, Status=Status.ABERTO},
-            new Pedido{ IdPizzaria=001, Status=Status.ABERTO},
-            new Pedido{ IdPizzaria=002, Status=Status.ABERTO},
-            new Pedido{ IdPizzaria=001, Status=Status.ENTREGUE},
-            new Pedido{ IdPizzaria=001, Status=Status.ABERTO}
+            new Pedido{ IdPedido=01, IdPizzaria=001, IdCliente=01, Status=Status.ABERTO },
+            new Pedido{ IdPedido=02,IdPizzaria=001, IdCliente=02, Status=Status.ABERTO},
+            new Pedido{ IdPedido=03,IdPizzaria=001, IdCliente=01,Status=Status.ABERTO},
+            new Pedido{ IdPedido=04,IdPizzaria=002, IdCliente=02,Status=Status.ABERTO},
+            new Pedido{ IdPedido=05,IdPizzaria=001, IdCliente=03,Status=Status.ENTREGUE},
+            new Pedido{ IdPedido=06,IdPizzaria=001, IdCliente=01,Status=Status.ABERTO}
         };
 
         #endregion
 
 
-        [HttpPost]
+        [HttpGet]
         [Route("Listaprodutos")]
-        public async Task<IActionResult> Listaprodutos([FromBody]Cliente cliente)
+        public async Task<IActionResult> Listaprodutos(Cliente cliente)
         {
-            var produtos =_produtos.Where(x => x.IdPizzaria == cliente.IdPizzaria);
+            //var produtos =_produtos.Where(x => x.IdPizzaria == cliente.IdPizzaria);
+            var produtos = _produtos.ToList();
 
             return Ok(produtos);
         }
@@ -62,6 +63,16 @@ namespace PizzariaAPI.Controllers
             && x.IdPizzaria == pizzaria.IdPizzaria);
 
             return Ok(pedidosEmAberto);
+        }
+
+        [HttpGet]
+        [Route("PedidosDoCliente")]
+        public async Task<IActionResult> PedidosDoCliente(Cliente cliente)
+        {
+            var pedidos =_pedidos.Where(x => x.IdCliente == cliente.IdCliente)
+            .OrderByDescending(x => x.DataPedido);
+
+            return Ok(pedidos);
         }
 
         [HttpPost]
