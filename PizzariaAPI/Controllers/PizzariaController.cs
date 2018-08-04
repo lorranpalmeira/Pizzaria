@@ -7,6 +7,7 @@ using Dapper.Contrib.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using PizzariaAPI.DAO;
 using PizzariaAPI.Models;
 
 namespace PizzariaAPI.Controllers
@@ -17,13 +18,16 @@ namespace PizzariaAPI.Controllers
     public class PizzariaController : Controller
     {
 
-        private IConfiguration _config;
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        
+        
+        private  IConfiguration _config;
 
-        public PizzariaController(IConfiguration configuration)
+        public PizzariaController(IConfiguration config)
         {
-            _config = configuration;
+            _config = config;
         }
-
+      
         public static List<Pizzaria> listaPizzaria = new List<Pizzaria>
         {
             new Pizzaria(){ IdPizzaria=01, Nome="1 Amigo" },
@@ -45,17 +49,17 @@ namespace PizzariaAPI.Controllers
         [Route("GetPizzarias")]
         [HttpGet]
         public async Task<IActionResult> GetPizzarias()
-        {
+        { 
             using (SqlConnection conexao = new SqlConnection(
                 _config.GetConnectionString("PizzariaDatabase")))
             {
-                return Ok( conexao.GetAll<Pizzaria>());
+                logger.Debug("Teste");
+                logger.Fatal("Errrrrrrrrrrr");
+                return Json(conexao.GetAll<Pizzaria>());
             }
 
-            //var pizzarias = listaPizzaria.ToList();
-            //return Ok(pizzarias);
-
-
+           
+            
         }
     }
 }
