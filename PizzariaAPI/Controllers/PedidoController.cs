@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PizzariaAPI.Models;
 
 namespace PizzariaAPI.Controllers
 {
-
+    [Authorize(Policy = "UsuarioAPI")]
     [Route("api/[controller]")]
     public class PedidoController : Controller
     {
@@ -66,10 +67,10 @@ namespace PizzariaAPI.Controllers
         }
 
         [HttpGet]
-        [Route("PedidosDoCliente")]
-        public async Task<IActionResult> PedidosDoCliente(Cliente cliente)
+        [Route("PedidosDoCliente/{id}")]
+        public async Task<IActionResult> PedidosDoCliente(int id)
         {
-            var pedidos =_pedidos.Where(x => x.IdCliente == cliente.IdCliente)
+            var pedidos =_pedidos.Where(x => x.IdCliente == id)
             .OrderByDescending(x => x.DataPedido);
 
             return Ok(pedidos);

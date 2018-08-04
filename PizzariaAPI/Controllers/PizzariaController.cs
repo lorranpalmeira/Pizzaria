@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PizzariaAPI.Models;
 
 namespace PizzariaAPI.Controllers
 {
+
+    [Authorize(Policy = "UsuarioAPI")]
     [Route("api/[controller]")]
     public class PizzariaController : Controller
     {
