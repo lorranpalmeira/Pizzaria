@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using Dapper.Contrib.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using PizzariaAPI.Models;
 
 namespace PizzariaAPI.Controllers
@@ -13,6 +16,13 @@ namespace PizzariaAPI.Controllers
     [Route("api/[controller]")]
     public class PizzariaController : Controller
     {
+
+        private IConfiguration _config;
+
+        public PizzariaController(IConfiguration configuration)
+        {
+            _config = configuration;
+        }
 
         public static List<Pizzaria> listaPizzaria = new List<Pizzaria>
         {
@@ -36,8 +46,16 @@ namespace PizzariaAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPizzarias()
         {
-            var pizzarias = listaPizzaria.ToList();
-            return Ok(pizzarias);
+            using (SqlConnection conexao = new SqlConnection(
+                _config.GetConnectionString("PizzariaDatabase")))
+            {
+                return Ok( conexao.GetAll<Pizzaria>());
+            }
+
+            //var pizzarias = listaPizzaria.ToList();
+            //return Ok(pizzarias);
+
+
         }
     }
 }
